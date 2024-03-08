@@ -48,6 +48,7 @@ def main():
         elif Home:
             print("INSERT home INTRO")
 
+    intro_to_background()
 
     def Casino_Key_Check():
         if Money >= Debt //2:
@@ -55,10 +56,11 @@ def main():
             return
         else:
             return
-
+    
     def Number_Guesser():
         # SIZE OF THELIST GIVEN FROM USER INPUT.
         list_size = []
+        reward_value = []
         cash_gambled = int(input("How much cash do you wanna wager? "))
         number_inlist = int(input(f"Hello! From 2-5 How Low Or High Do You Want Your Odds?\n "
                                   f"Note, higher number means higher payout!"))
@@ -69,18 +71,20 @@ def main():
             list_size.append(1)
             list_size.append(2)
             reward = 1.1
-            print(list_size)
+            reward_value.append(reward)
         elif number_inlist == 3:
             list_size.append(1)
             list_size.append(2)
             list_size.append(3)
             reward = 1.2
+            reward_value.append(reward)
         elif number_inlist == 4:
             list_size.append(1)
             list_size.append(2)
             list_size.append(3)
             list_size.append(4)
             reward = 1.4
+            reward_value.append(reward)
         elif number_inlist == 5:
             list_size.append(1)
             list_size.append(2)
@@ -88,6 +92,7 @@ def main():
             list_size.append(4)
             list_size.append(5)
             reward = 1.5
+            reward_value.append(reward)
             # ERROR CHECKER?
         else:
             print("Enter a value given.")
@@ -101,6 +106,7 @@ def main():
         if PLAYER_CHOOSES == AI_CHOOSES:
             print("Yippee!")
             # ADD FUNCTION OF WIN + ADD MONEY HERE
+            cash_gambled * reward_value
             Money.append(cash_gambled)
 
         else:
@@ -194,6 +200,3 @@ def main():
 
 
 main()
-
-
-
