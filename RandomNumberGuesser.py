@@ -19,6 +19,7 @@ else:
 
 def main():
     Starting_money = 1000
+    Money.append(Starting_money)
     debt = random.randint(10000, 20000)
     Debt.append(debt)
     Has_money = True
@@ -62,7 +63,9 @@ def main():
         number_inlist = int(input("Hello! From 2-5 How Low Or High Do You Want Your Odds? "))
 
         # APPENDS TO LIST (I think code can be simplified lmao)
-        if number_inlist == 2:
+        if number_inlist not in range(2,6):
+            print("Number not found.")
+        elif number_inlist == 2:
             list_size.append(1)
             list_size.append(2)
             reward = 30
@@ -99,7 +102,6 @@ def main():
         else:
             print("Lose. :(")
             # ADD FUNCTION OF LOSE + SUBTRACT MONEY HERE
-        Number_Guesser()
 
 
     def rockpaperscissors():
@@ -151,12 +153,12 @@ def main():
 
                 elif player_choice == 'Paper' and computer_choice == 'Scissors':
                     return ("Computer wins!")
-                elif player_choice == 'Paper' and computer_choice == 'Scissors':
+                elif player_choice == 'Scissors' and computer_choice == 'Paper':
+                    return ("Player wins!")
+                elif player_choice == 'Rock' and computer_choice == 'Paper':
+                    return ("Player wins!")
+                elif player_choice == 'Scissors' and computer_choice == 'Rock':
                     return ("Computer wins!")
-                elif player_choice == 'Scissors' and computer_choice == 'Paper':
-                    return ("Player wins!")
-                elif player_choice == 'Scissors' and computer_choice == 'Paper':
-                    return ("Player wins!")
 
                 elif player_choice == 'Scissors' and computer_choice == 'Rock':
                     return ("Computer wins!")
@@ -169,9 +171,11 @@ def main():
 
             print(determine_winner(player_choice, computer_choice))
 
+
         rockpaperscissor()
 
-    Number_Guesser()
+    rockpaperscissors()
+
 
 
 
@@ -185,5 +189,3 @@ def main():
 
 
 main()
-
-
